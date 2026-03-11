@@ -1,8 +1,6 @@
 // 跟随系统主题
 const media = matchMedia("(prefers-color-scheme: light)");
 function followOs() {
-  console.log(media.matches);
-
   document.documentElement.dataset.theme = media.matches ? "light" : "dark";
 }
 

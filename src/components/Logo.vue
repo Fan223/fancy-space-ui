@@ -1,6 +1,7 @@
 <template>
-  <div class="logo-container">
+  <div class="logo-container" relative>
     <div class="glow" />
+
     <Aurora
       :style="{ height: props.height, width: props.width, padding: padding }"
     >
@@ -65,28 +66,43 @@ const padding = computed(() => {
 
 <style scoped lang="scss">
 div {
-  border-radius: 58% 42% 55% 45% / 46% 54%;
+  border-radius: 70% 30% 60% 40% / 50% 60% 40% 50%;
   animation:
-    morph 8s ease-in-out infinite,
-    breath 8s ease-in-out infinite;
+    morph 16s linear infinite,
+    breath 16s linear infinite;
 }
 
 @keyframes morph {
-  0%,
+  0% {
+    border-radius: 70% 30% 60% 40% / 50% 60% 40% 50%;
+  }
+
+  14% {
+    border-radius: 55% 45% 75% 25% / 65% 35% 70% 30%;
+  }
+
+  28% {
+    border-radius: 35% 65% 65% 35% / 70% 40% 60% 30%;
+  }
+
+  42% {
+    border-radius: 25% 75% 40% 60% / 55% 25% 75% 35%;
+  }
+
+  57% {
+    border-radius: 45% 55% 25% 75% / 30% 65% 35% 70%;
+  }
+
+  71% {
+    border-radius: 65% 35% 45% 55% / 40% 75% 25% 65%;
+  }
+
+  85% {
+    border-radius: 80% 20% 55% 45% / 60% 45% 55% 40%;
+  }
+
   100% {
-    border-radius: 58% 42% 55% 45% / 46% 54%;
-  }
-
-  25% {
-    border-radius: 65% 35% 48% 52% / 55% 45% 60% 40%;
-  }
-
-  50% {
-    border-radius: 45% 55% 60% 40% / 50% 60% 40% 50%;
-  }
-
-  75% {
-    border-radius: 60% 40% 50% 50% / 42% 58% 55% 45%;
+    border-radius: 70% 30% 60% 40% / 50% 60% 40% 50%;
   }
 }
 
@@ -97,30 +113,21 @@ div {
   }
 
   50% {
-    transform: scale(1.04);
+    transform: scale(1.05);
   }
-}
-
-.logo-container {
-  position: relative;
-  display: inline-flex;
-  border-radius: 58% 42% 55% 45% / 46% 54%;
-
-  // 跟你的 div 形状一致
 }
 
 .glow {
   position: absolute;
-  inset: -4px;
   background: var(--main-gradient);
-  border-radius: inherit;
-  filter: blur(0.5rem);
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  inset: -0.25rem; // 比容器略大, 让光晕溢出
+  filter: blur(0.5rem); // 模糊变成光晕
+  opacity: 0; // 默认隐藏
+  transition: opacity 0.25s linear;
   z-index: -1;
 }
 
 .logo-container:hover .glow {
-  opacity: 0.7;
+  opacity: 1;
 }
 </style>
