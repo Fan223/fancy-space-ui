@@ -27,9 +27,6 @@ const currentMatched = computed(() => route.matched.at(-1));
 const hasLeft = computed(() => !!currentMatched.value?.components?.left);
 const hasRight = computed(() => !!currentMatched.value?.components?.right);
 
-console.log(hasLeft.value);
-console.log(hasRight.value);
-
 const gridTemplate = computed(() => {
   if (hasLeft.value && hasRight.value) return "240px minmax(0,1fr) 300px";
 

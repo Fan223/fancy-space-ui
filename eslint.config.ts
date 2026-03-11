@@ -3,18 +3,25 @@ import globals from "globals";
 import tseslint from "typescript-eslint";
 import pluginVue from "eslint-plugin-vue";
 import { defineConfig } from "eslint/config";
+import autoImport from "./.eslintrc-auto-import.json";
 
 export default defineConfig([
   {
     files: ["**/*.{js,mjs,cjs,ts,mts,cts,vue}"],
     plugins: { js },
-    extends: ["js/recommended", "./.eslintrc-auto-import.json"],
-    languageOptions: { globals: globals.browser },
+    extends: ["js/recommended"],
+    languageOptions: { globals: { ...globals.browser, ...autoImport.globals } },
   },
   tseslint.configs.recommended,
   pluginVue.configs["flat/essential"],
   {
     files: ["**/*.vue"],
     languageOptions: { parserOptions: { parser: tseslint.parser } },
+  },
+  {
+    rules: {
+      "vue/multi-word-component-names": "off",
+      "no-undef": "off",
+    },
   },
 ]);
