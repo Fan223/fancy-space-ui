@@ -2,7 +2,9 @@
   "extends": "@vue/tsconfig/tsconfig.dom.json",
   "compilerOptions": {
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+    // 指定编译后的版本目标
     "target": "ES2023",
+    // 指定要包含在编译中的库
     "lib": ["ES2023", "DOM", "DOM.Iterable"],
     "types": ["vite/client"],
 
@@ -15,8 +17,8 @@
     "noUncheckedSideEffectImports": true,
 
     /* Alias */
-    "baseUrl": "./", // 设置解析非相对模块名称的基本目录
-    "paths": { "@/*": ["src/*"] } // 设置模块名称到 baseUrl 的路径映射
+    "baseUrl": "./",
+    "paths": { "@/*": ["src/*"] }
   },
   "include": [
     "src/**/*.ts",
