@@ -1,4 +1,9 @@
-import { defineStore } from "pinia";
+export const useGlobalStore = defineStore("global", {
+  state: () => ({
+    scrollPercent: 0,
+    screenWidth: window.innerWidth,
+  }),
+});
 
 export const useCounterStore = defineStore("counter", {
   state: () => ({ count: 0 }),
