@@ -5,13 +5,14 @@
 <script setup lang="ts"></script>
 
 <style scoped lang="scss">
+@use "sass:math";
 @use "sass:string";
 
 @function generate-shadows($n) {
-  $shadows: "#{random(100)}vw #{random(100)}vh #f1f3f9";
+  $shadows: "#{math.random(100)}vw #{math.random(100)}vh #f1f3f9";
 
   @for $i from 2 through $n {
-    $shadows: "#{$shadows}, #{random(100)}vw #{random(100)}vh #f1f3f9";
+    $shadows: "#{$shadows}, #{math.random(100)}vw #{math.random(100)}vh #f1f3f9";
   }
 
   @return string.unquote($shadows);
