@@ -13,10 +13,10 @@
     <aside
       v-if="hasLeft"
       :style="{
-        height: 'calc(100vh - 6rem)',
+        height: 'calc(100vh - 4rem)',
       }"
       sticky
-      top-20
+      top-16
       overflow-y-auto
     >
       <RouterView name="left" />
