@@ -1,7 +1,7 @@
 <template>
   <RouterView />
 
-  <Starry />
+  <!-- <Starry /> -->
 </template>
 
 <script lang="ts" setup>
