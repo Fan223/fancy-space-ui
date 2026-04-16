@@ -5,9 +5,9 @@
       用 v-if 完全卸载，切换到亮色时不占 GPU 资源
       星星没有"淡入"需求，直接消失即可，所以 v-if 没问题
     -->
-    <div class="starry starry1" v-show="isDark" />
+    <!-- <div class="starry starry1" v-show="isDark" />
     <div class="starry starry2" v-show="isDark" />
-    <div class="starry starry3" v-show="isDark" />
+    <div class="starry starry3" v-show="isDark" /> -->
 
     <!--
       光晕三层：始终保留在 DOM 中，用 v-show 控制
@@ -16,9 +16,9 @@
       v-show 只切换 display，节点始终在 DOM，opacity 过渡正常触发
       实际的 opacity: 0→1 由 .is-light & { opacity: 1 } 驱动
     -->
-    <div class="light light1" />
+    <!-- <div class="light light1" />
     <div class="light light2" />
-    <div class="light light3" />
+    <div class="light light3" /> -->
     <!--
       樱花 canvas：亮色主题专属，v-if 挂载/卸载
       卸载时 watch(sakuraCanvas) 收到 null，自动调用 stopSakura() 取消 rAF

@@ -6,7 +6,7 @@
     left-0
     top-0
     flex="~ justify-between items-center"
-    p="x-8 y-4"
+    p="x-8 y-2"
     z-999
   >
     <Logo />
@@ -32,11 +32,13 @@ const { scrollPercent } = storeToRefs(useGlobalStore());
   transition:
     all 0.5s ease,
     background 1.2s ease;
+  box-shadow: var(--header-shadow);
 
   &.active {
     background-color: var(--background-backdrop);
     backdrop-filter: blur(0.5rem);
-    padding: 0.5rem 2rem;
+
+    // padding: 0.5rem 2rem;
   }
 }
 </style>

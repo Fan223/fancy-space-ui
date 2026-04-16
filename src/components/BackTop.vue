@@ -14,7 +14,7 @@
     z-999
   >
     <div style="background-color: var(--background-primary)" p-1 rd="50%">
-      <SizeBox
+      <SizedBox
         class="i-line-md:upload-loop"
         style="color: var(--text-accent)"
         size="2.5rem"

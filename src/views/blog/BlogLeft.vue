@@ -1,40 +1,48 @@
 <template>
-  <div>
+  <div mt-6>
     <FancyTree
+      label="name"
       :data="categories"
-      label-key="name"
-      :expanded-keys="expandedKeys"
-      :selected-key="selectedKey"
+      :expanded="expanded"
+      :selected="selected"
       @toggle="toggle"
       @select="select"
     >
       <template #node="{ node }">
-        <span> {{ node.orderNum }} {{ node.flag }} </span>
+        <b>{{ node.name }} </b>
       </template>
     </FancyTree>
   </div>
 </template>
 
 <script lang="ts" setup>
-const expandedKeys = ref<string[]>([]);
+interface Category {
+  id: string;
+  parentId: string | null;
+  name: string;
+  orderNum: number;
+  flag: string;
+  count: string | null;
+  children: Category[];
+}
 
-const toggle = (node: Node) => {
-  const i = expandedKeys.value.indexOf(node.id);
-  if (i > -1) expandedKeys.value.splice(i, 1);
-  else expandedKeys.value.push(node.id);
+const expanded = ref<string[]>([]);
+
+const toggle = (node: Category) => {
+  console.log(node);
+
+  const i = expanded.value.indexOf(node.id);
+  if (i > -1) expanded.value.splice(i, 1);
+  else expanded.value.push(node.id);
 };
 
-const selectedKey = ref<string>();
+const selected = ref<string>();
 
-const select = (node: Node) => {
-  selectedKey.value = node.id;
-
-  if (node.type === "article") {
-    console.log("跳转:", node.path);
-  }
+const select = (node: Category) => {
+  selected.value = node.id;
 };
 
-const categories = [
+const categories: Category[] = [
   {
     id: "50807724088414208",
     parentId: null,
@@ -65,7 +73,7 @@ const categories = [
   {
     id: "22187186852577280",
     parentId: null,
-    name: "开发知识及其他",
+    name: "开发知识及其他开发知识及其他开发知识及其他",
     orderNum: 30,
     flag: "Y",
     count: "14",
@@ -74,7 +82,7 @@ const categories = [
   {
     id: "13879831178047488",
     parentId: null,
-    name: "Java",
+    name: "Java 开发知识及其他开发知识及其他开发知识及其他",
     orderNum: 40,
     flag: "Y",
     count: "4",
@@ -85,15 +93,24 @@ const categories = [
         name: "Java 集合",
         orderNum: 41,
         flag: "N",
-        count: null,
+        count: "5",
         children: [
           {
-            id: "68556025489289216",
+            id: "68556025489289217",
             parentId: "13879831178047488",
-            name: "Java 集合",
+            name: "List",
             orderNum: 41,
             flag: "N",
-            count: null,
+            count: "3",
+            children: [],
+          },
+          {
+            id: "68556025489289218",
+            parentId: "13879831178047488",
+            name: "Set",
+            orderNum: 41,
+            flag: "N",
+            count: "1",
             children: [],
           },
         ],
@@ -163,61 +180,5 @@ const categories = [
     count: "7",
     children: [],
   },
-  {
-    id: "14212701838987264",
-    parentId: null,
-    name: "面试",
-    orderNum: 110,
-    flag: "Y",
-    count: "1",
-    children: [],
-  },
-  {
-    id: "50840364587909120",
-    parentId: null,
-    name: "Python",
-    orderNum: 470,
-    flag: "Y",
-    count: "2",
-    children: [],
-  },
-  {
-    id: "13879727343857664",
-    parentId: null,
-    name: "Vue",
-    orderNum: 480,
-    flag: "Y",
-    count: "6",
-    children: [],
-  },
-  {
-    id: "24343994444177408",
-    parentId: null,
-    name: "Flutter",
-    orderNum: 490,
-    flag: "Y",
-    count: "2",
-    children: [],
-  },
-  {
-    id: "13879595646906368",
-    parentId: null,
-    name: "设计模式",
-    orderNum: 500,
-    flag: "Y",
-    count: "8",
-    children: [],
-  },
-  {
-    id: "14151607879553024",
-    parentId: null,
-    name: "未发布",
-    orderNum: 999,
-    flag: "N",
-    count: null,
-    children: [],
-  },
 ];
 </script>
-
-<style lang="scss" scoped></style>

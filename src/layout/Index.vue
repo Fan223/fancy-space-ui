@@ -10,15 +10,7 @@
       maxWidth: fixed ? '1280px' : 'none',
     }"
   >
-    <aside
-      v-if="hasLeft"
-      :style="{
-        height: 'calc(100vh - 4rem)',
-      }"
-      sticky
-      top-16
-      overflow-y-auto
-    >
+    <aside v-if="hasLeft" sticky top-16 h="[calc(100vh-4rem)]" overflow-y-auto>
       <RouterView name="left" />
     </aside>
 
