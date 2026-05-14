@@ -1,15 +1,9 @@
 <template>
   <div>
     <b>推荐文章</b>
-    <FancyList :items="articles">
+    <FancyList :items="articles" mt-2>
       <template #default="{ item }">
-        <div class="flex items-center justify-between">
-          <span>{{ item.title }}</span>
-        </div>
-      </template>
-
-      <template #item="item">
-        <div class="text-gray-300">{{ item.title }}</div>
+        <b>{{ item.title }}</b>
       </template>
     </FancyList>
   </div>

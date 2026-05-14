@@ -1,5 +1,11 @@
 <template>
   <div>
+    <FancyInput v-model="keyword" placeholder="搜索内容">
+      <template #prefix>
+        <div class="i-ic:twotone-search" />
+      </template>
+    </FancyInput>
+
     <!-- 文章 -->
     <Article :articles="articles" />
   </div>
@@ -7,6 +13,8 @@
 
 <script lang="ts" setup>
 import Article from "./article/Index.vue";
+
+const keyword = ref("");
 
 const articles = [
   {
