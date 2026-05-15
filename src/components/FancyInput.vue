@@ -2,33 +2,43 @@
   <div
     flex
     items-center
-    justify-between
-    p-1
-    :class="{
-      'is-disabled': disabled,
-      'has-prefix': !!$slots.prefix,
-      'has-suffix': !!$slots.suffix,
-    }"
-    style="border: 1px solid red"
+    bg="[var(--background-secondary)]"
+    border-b
+    rounded-t-1
+    :class="
+      focused ? 'border-b-[var(--text-normal)]' : 'border-b-[var(--text-dim)]'
+    "
   >
-    <div flex>
+    <!-- 前缀插槽 -->
+    <div v-if="$slots.prefix" ml-2>
       <slot name="prefix" />
     </div>
 
-    <div w-full style="border: 1px solid blue">
-      <input
-        p-4
-        v-model="value"
-        :disabled="disabled"
-        :placeholder="placeholder"
-        v-bind="attrs"
-        w-full
-        bg="[var(--background-secondary)]"
-        outline-none
-      />
-    </div>
+    <!-- 输入框 -->
+    <input
+      v-model="value"
+      :placeholder="placeholder"
+      outline-none
+      flex-1
+      w-0
+      p="x-2 y-4"
+      @focus="focused = true"
+      @blur="focused = false"
+      @keydown.enter="emit('enter')"
+      @keydown.escape="handleClear"
+    />
 
-    <div style="border: 1px solid orange">
+    <div v-if="(clearable && value) || $slots.suffix" flex gap-2 mr-2>
+      <!-- 清除按钮 -->
+      <div
+        v-if="clearable && value"
+        i-ic:twotone-close
+        cursor-pointer
+        class="text-[var(--text-dim)] hover:text-[var(--text-normal)]"
+        @click.stop="handleClear"
+      />
+
+      <!-- 后缀插槽 -->
       <slot name="suffix" />
     </div>
   </div>
@@ -38,24 +48,28 @@
 interface Props {
   modelValue?: string;
   placeholder?: string;
+  clearable?: boolean;
 }
 
 const props = withDefaults(defineProps<Props>(), {
   modelValue: "",
-  disabled: false,
-  placeholder: "",
+  placeholder: "搜索",
+  clearable: true,
 });
+
+const focused = ref(false);
 
 const emit = defineEmits<{
   "update:modelValue": [value: string];
+  enter: [];
 }>();
-
-const attrs = useAttrs();
 
 const value = computed({
   get: () => props.modelValue,
-  set: (value: string) => emit("update:modelValue", value),
+  set: (val: string) => emit("update:modelValue", val),
 });
-</script>
 
-<style scoped lang="scss"></style>
+function handleClear() {
+  emit("update:modelValue", "");
+}
+</script>

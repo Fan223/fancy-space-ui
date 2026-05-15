@@ -1,5 +1,5 @@
 <template>
-  <div style="background: var(--main-gradient)">
+  <div style="background: var(--background-aurora)">
     <slot />
   </div>
 </template>

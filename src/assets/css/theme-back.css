@@ -1,47 +1,37 @@
 /* prettier-ignore */
 :root {
-  /* 极光 */
-  --background-aurora: linear-gradient(130deg, #24c6dc 0%, #5433ff 41.07%, #f09 76.05%);
-
-  /* 背景 */
+  /* 主背景颜色 */
   --background-primary: #f1f3f9;
   --background-primary-alt: #fafafa;
+
+  /* 次背景颜色 */
   --background-secondary: #fff;
-  --background-secondary-alt: #f7f8fc;
+  --background-secondary-alt: #2e3236;
+
+  /* 反式背景颜色, 黑色 15% 透明 */
   --background-trans: rgb(0 0 0 / 15%);
+
+  /* 背景幕布颜色, 主背景颜色 80% 透明 */
   --background-backdrop: rgb(241 243 249 / 80%);
-  
-  /* 文本 */
-  --text-normal: #2f2f2f;
+  --header-shadow: 0 1px 2px rgb(0 0 0 / 4%), 0 4px 8px rgb(0 0 0 / 6%), 0 10px 20px rgb(0 0 0 / 8%);
+
+  /* 正常文本颜色 */
+  --text-normal: #333;
+
+  /* 明亮文本颜色，黑色 */
   --text-bright: #000;
+
+  /* 反转文本颜色，白色 */
   --text-invert: #fff;
-  --text-dim: #777;
-  --text-disabled: #a8a8a8;
 
-  /* 强调 */
-  --text-accent: #ff4da6;
-  --text-a: #ff66b3;
+  /* 突出文本颜色 */
+  --text-accent: #f09;
 
-  /* 颜色状态 */
-  --color-success: #16a34a;
-  --color-warning: #f59e0b;
-  --color-danger: #ef4444;
-  --color-info: #3b82f6;
+  /* 暗淡文本颜色 */
+  --text-dim: #858585;
 
-  /* 边框 */
-  --border-primary: rgb(0 0 0 / 8%);
-  --border-secondary: rgb(0 0 0 / 12%);
-
-  /* 遮罩 */
-  --overlay-bg: rgb(0 0 0 / 45%);
-
-  /* 层级 */
-  --surface-1: var(--background-secondary);
-  --surface-2: var(--background-primary-alt);
-  --surface-3: rgb(36 198 220 / 4%);
-
-  /* 焦点 */
-  --focus-ring: 0 0 0 3px rgb(20 184 212 / 25%);
+  /* 链接文本颜色 */
+  --text-a: #db4d52;
 
   /* 横幅遮盖颜色 */
   --banner-cover: linear-gradient(180deg, hsl(225deg 40% 96% / 0%) 0, hsl(225deg 40% 96% / 1.3%) 8.1%, hsl(225deg 40% 96% / 4.9%) 15.5%, hsl(225deg 40% 96% / 10.4%) 22.5%, hsl(225deg 40% 96% / 17.5%) 29%, hsl(225deg 40% 96% / 25.9%) 35.3%, hsl(225deg 40% 96% / 35.2%) 41.2%, hsl(225deg 40% 96% / 45%) 47.1%, hsl(225deg 40% 96% / 55%) 52.9%, hsl(225deg 40% 96% / 64.8%) 58.8%, hsl(225deg 40% 96% / 74.1%) 64.7%, hsl(225deg 40% 96% / 82.5%) 71%, hsl(225deg 40% 96% / 89.6%) 77.5%, hsl(225deg 40% 96% / 95.1%) 84.5%, hsl(225deg 40% 96% / 98.7%) 91.9%, var(--background-primary));
@@ -51,58 +41,48 @@
 
   /* 文章垂直遮盖颜色 */
   --article-cover-vertical: linear-gradient(90deg, hsl(0deg 0% 98% / 0%) 0, hsl(0deg 0% 98% / 1.3%) 8.1%, hsl(0deg 0% 98% / 4.9%) 15.5%, hsl(0deg 0% 98% / 10.4%) 22.5%, hsl(0deg 0% 98% / 17.5%) 29%, hsl(0deg 0% 98% / 25.9%) 35.3%, hsl(0deg 0% 98% / 35.2%) 41.2%, hsl(0deg 0% 98% / 45%) 47.1%, hsl(0deg 0% 98% / 55%) 52.9%, hsl(0deg 0% 98% / 64.8%) 58.8%, hsl(0deg 0% 98% / 74.1%) 64.7%, hsl(0deg 0% 98% / 82.5%) 71%, hsl(0deg 0% 98% / 89.6%) 77.5%, hsl(0deg 0% 98% / 95.1%) 84.5%, hsl(0deg 0% 98% / 98.7%) 91.9%, var(--background-secondary));
-  --header-shadow: 0 1px 2px rgb(0 0 0 / 4%), 0 4px 8px rgb(0 0 0 / 6%), 0 10px 20px rgb(0 0 0 / 8%);
 
-  /* 滚动条 */
+  /* 滚动条轨道背景颜色 */
   --background-scrollbar-track: #fcfcfc;
+
+  /* 滚动条滑块背景颜色 */
   --background-scrollbar-thumb: #8b8b8b;
 }
 
 /* prettier-ignore */
 html[data-theme='dark'] {
-  /* 背景 */
+  /* 主背景颜色 */
   --background-primary: #1a1a1a;
   --background-primary-alt: #0d0b12;
+
+   /* 次背景颜色 */
   --background-secondary: #242424;
-  --background-secondary-alt: #16131d;
-  --background-trans: rgb(255 255 255 / 12%);
-  --background-backdrop: rgb(26 26 26 / 80%);
+  --background-secondary-alt: #0d0b12;
 
-  /* 文本 */
-  --text-normal: #d2d2d2;
+  /* 反式背景颜色, 白色 15% 透明 */
+  --background-trans: rgb(255 255 255 / 15%);
+
+   /* 背景幕布颜色, 主背景颜色 80% 透明 */
+   --background-backdrop: rgb(26 26 26 / 80%);
+   --header-shadow:0 0 0 1px rgb(255 255 255 / 6%), 0 6px 12px rgb(0 0 0 / 40%), 0 12px 24px rgb(0 0 0 / 35%);
+
+  /* 正常文本颜色 */
+  --text-normal: #bebebe;
+
+  /* 明亮文本颜色，白色 */
   --text-bright: #fff;
+
+  /* 反转文本颜色，黑色 */
   --text-invert: #000;
-  --text-dim: #8a8a8a;
-  --text-disabled: #666;
 
-  /* 强调 */
-  --text-accent: #14b8d4;
-  --text-a: #0ea5e9;
+  /* 突出文本颜色 */
+  --text-accent: #24c6dc;
 
-  /* 颜色状态 */
- --color-success: #22c55e;
-  --color-warning: #fbbf24;
-  --color-danger: #f87171;
-  --color-info: #60a5fa;
+  /* 暗淡文本颜色 */
+  --text-dim: #6d6d6d;
 
-  /* 边框 */
-  --border-primary: rgb(255 255 255 / 8%);
-  --border-secondary: rgb(255 255 255 / 12%);
-
-  /* 遮罩 */
-  --overlay-bg: rgb(0 0 0 / 65%);
-
-  /* 层级 */
-  --surface-1: var(--background-secondary);
-  --surface-2: var(--background-primary-alt);
-  --surface-3: rgb(255 0 153 / 5%);
-
-  /* 焦点 */
-  --focus-ring: 0 0 0 3px rgb(255 77 166 / 30%);
-
- /* 滚动条 */
-  --background-scrollbar-track: #2c2c2c;
-  --background-scrollbar-thumb: #9f9f9f;
+  /* 链接文本颜色 */
+  --text-a: #6bcafb;
 
   /* 横幅遮盖颜色 */
   --banner-cover: linear-gradient(180deg, hsl(0deg 0% 10% / 0%) 0, hsl(0deg 0% 10% / 1%) 8.1%, hsl(0deg 0% 10% / 4.9%) 15.5%, hsl(0deg 0% 10% / 10.4%) 22.5%, hsl(0deg 0% 10% / 17.5%) 29%, hsl(0deg 0% 10% / 25.9%) 35.3%, hsl(0deg 0% 10% / 35.2%) 41.2%, hsl(0deg 0% 10% / 45%) 47.1%, hsl(0deg 0% 10% / 55%) 52.9%, hsl(0deg 0% 10% / 64.8%) 58.8%, hsl(0deg 0% 10% / 74.1%) 64.7%, hsl(0deg 0% 10% / 82.5%) 71%, hsl(0deg 0% 10% / 89.6%) 77.5%, hsl(0deg 0% 10% / 95.1%) 84.5%, hsl(00deg 0% 10% / 98.7%) 91.9%, var(--background-primary));
@@ -112,5 +92,10 @@ html[data-theme='dark'] {
 
   /* 文章垂直遮盖颜色 */
   --article-cover-vertical: linear-gradient(90deg, hsl(0deg 0% 13% / 0%) 0, hsl(0deg 0% 13% / 1.3%) 8.1%, hsl(0deg 0% 13% / 4.9%) 15.5%, hsl(0deg 0% 13% / 10.4%) 22.5%, hsl(0deg 0% 13% / 17.5%) 29%, hsl(0deg 0% 13% / 25.9%) 35.3%, hsl(0deg 0% 13% / 35.2%) 41.2%, hsl(0deg 0% 13% / 45%) 47.1%, hsl(0deg 0% 13% / 55%) 52.9%, hsl(0deg 0% 13% / 64.8%) 58.8%, hsl(0deg 0% 13% / 74.1%) 64.7%, hsl(0deg 0% 13% / 82.5%) 71%, hsl(0deg 0% 13% / 89.6%) 77.5%, hsl(0deg 0% 13% / 95.1%) 84.5%, hsl(00deg 0% 13% / 98.7%) 91.9%, var(--background-secondary));
-  --header-shadow:0 0 0 1px rgb(255 255 255 / 6%), 0 6px 12px rgb(0 0 0 / 40%), 0 12px 24px rgb(0 0 0 / 35%);
+
+  /* 滚动条轨道背景颜色 */
+  --background-scrollbar-track: #2c2c2c;
+
+  /* 滚动条滑块背景颜色 */
+  --background-scrollbar-thumb: #9f9f9f;
 }
