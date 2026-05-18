@@ -3,7 +3,7 @@
     <b>推荐文章</b>
     <FancyList :items="articles" mt-2>
       <template #default="{ item }">
-        <b>{{ item.title }}</b>
+        <b text-3.5>{{ item.title }}</b>
       </template>
     </FancyList>
   </div>

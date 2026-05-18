@@ -22,7 +22,7 @@
             <img :src="article.cover" object-cover rd-4 />
             <!-- 颜色混合层 -->
             <div
-              style="background: var(--main-gradient)"
+              style="background: var(--background-aurora)"
               rd-4
               op-50
               mix-blend-screen

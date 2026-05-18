@@ -2,7 +2,7 @@
   <div>
     <FancyInput v-model="keyword" placeholder="搜索文章" @enter="doSearch" mx-8>
       <template #prefix>
-        <div i-ic:twotone-search />
+        <div i-ic:twotone-search text="[var(--text-accent)]" />
       </template>
     </FancyInput>
 

@@ -3,10 +3,10 @@
     flex
     items-center
     bg="[var(--background-secondary)]"
-    border-b
+    border-b-1
     rounded-t-1
     :class="
-      focused ? 'border-b-[var(--text-normal)]' : 'border-b-[var(--text-dim)]'
+      focused ? 'border-b-[var(--text-accent)]' : 'border-b-[var(--text-dim)]'
     "
   >
     <!-- 前缀插槽 -->
@@ -34,7 +34,7 @@
         v-if="clearable && value"
         i-ic:twotone-close
         cursor-pointer
-        class="text-[var(--text-dim)] hover:text-[var(--text-normal)]"
+        class="text-[var(--text-dim)] hover:text-[var(--text-accent)]"
         @click.stop="handleClear"
       />
 
